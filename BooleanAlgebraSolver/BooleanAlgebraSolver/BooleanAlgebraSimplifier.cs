@@ -9,7 +9,7 @@
             Parenthesis = new HashSet<Parenthesis<T>>(parenthesis).ToList();
         }
 
-        public void Solve()
+        public void Solve(bool printSteps = false)
         {
             if (Parenthesis.Count == 0) return;
             while (Parenthesis.Count > 1)
@@ -19,7 +19,17 @@
                     parenthesis.ProcessRules();
                 }
 
-                MultiplyFirstTwo();
+                if (printSteps)
+                {
+                    Print();
+                }
+
+                Multiply();
+            }
+
+            if (printSteps)
+            {
+                Print();
             }
 
             Parenthesis.First().ProcessRules();
@@ -30,17 +40,24 @@
             Console.WriteLine(string.Join("", Parenthesis.Select(e => e.ToString())));
         }
 
-        private void MultiplyFirstTwo()
+        private void Multiply()
         {
             if (Parenthesis.Count < 2)
             {
                 return;
             }
 
-            var res = Parenthesis<T>.Multiply(Parenthesis[0], Parenthesis[1]);
+            int c = 0;
 
-            Parenthesis.RemoveAt(0);
-            Parenthesis[0] = res;
+            while (c + 1 < Parenthesis.Count)
+            {
+                var res = Parenthesis<T>.Multiply(Parenthesis[c], Parenthesis[c + 1]);
+
+                Parenthesis.RemoveAt(c + 1);
+                Parenthesis[c] = res;
+                c++;
+            }
+
         }
     }
 }
