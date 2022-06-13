@@ -1,4 +1,4 @@
-﻿namespace BooleanAlgebraSolver
+﻿namespace BooleanAlgebraSolver.BooleanAlgebra
 {
     public sealed class BooleanAlgebraSimplifier<T> where T : IEquatable<T>
     {
@@ -57,7 +57,6 @@
                 Parenthesis[c] = res;
                 c++;
             }
-
         }
     }
 }

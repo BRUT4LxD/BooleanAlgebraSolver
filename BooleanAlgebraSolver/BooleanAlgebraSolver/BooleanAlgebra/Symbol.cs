@@ -1,4 +1,4 @@
-﻿namespace BooleanAlgebraSolver
+﻿namespace BooleanAlgebraSolver.BooleanAlgebra
 {
     public sealed class Symbol<T> : IEquatable<Symbol<T>> where T : IEquatable<T>
     {
@@ -8,7 +8,6 @@
         {
             Value = value;
         }
-
 
         public static bool operator ==(Symbol<T> other, Symbol<T> other2) => other.Equals(other2);
 

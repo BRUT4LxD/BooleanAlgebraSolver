@@ -1,4 +1,4 @@
-﻿namespace BooleanAlgebraSolver
+﻿namespace BooleanAlgebraSolver.BooleanAlgebra
 {
     public class SameTermRule : ITermRule
     {

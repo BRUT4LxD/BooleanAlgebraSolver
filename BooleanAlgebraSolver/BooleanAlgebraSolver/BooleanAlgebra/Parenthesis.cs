@@ -1,4 +1,4 @@
-﻿namespace BooleanAlgebraSolver
+﻿namespace BooleanAlgebraSolver.BooleanAlgebra
 {
     public sealed class Parenthesis<T> : IEquatable<Parenthesis<T>> where T : IEquatable<T>
     {

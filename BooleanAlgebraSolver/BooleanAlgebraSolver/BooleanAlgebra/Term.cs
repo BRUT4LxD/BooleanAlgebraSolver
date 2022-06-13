@@ -1,4 +1,4 @@
-﻿namespace BooleanAlgebraSolver
+﻿namespace BooleanAlgebraSolver.BooleanAlgebra
 {
     public sealed class Term<T> : IEquatable<Term<T>> where T : IEquatable<T>
     {
